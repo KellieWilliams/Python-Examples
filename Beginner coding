@@ -1,0 +1,52 @@
+#print to screen messages
+#This prints Hello, World! to the screen
+print("Hello, World!")
+
+#The print function will not work unless the characters have "" aroudn it denoting the string
+pring(This will not work, because I did not make it a string with quotes.)
+
+#The print function can perform calculations within the function
+print(7+3)
+
+#The print function can also combine strings
+print("Hello," + " " + "World!")
+
+#However, print cannot combine different data types in a single function, for example, this will not work
+print(7 + "10")
+#This is trying to add an integer to a string as far as Python is concerned, and will not work
+
+#But an integer and a float can be calcluated in the same print function, for example
+print(7+10.2)
+#This is implicet conversion, Python (in the backgroudn) changes the integer to a float then performs the calculation and returns a float for an answer
+
+#If we want to perform a calculation between an integer and a string we need to do an explict conversion where we tell Python what data type to use, for example
+base = 6
+height - 10
+area = (base*height)/2 #triangle
+print("The area of the triangle is: " + str(area))
+#Within the print function we told Python to explicitly change the data type of the variable area to a string
+
+#Data types can be determined using the type function within the print function, for example
+print(type("8"))
+#This returns a <class 'str'> which means string because we used "" around the number
+
+#Annotating variables
+#This is a practice used to help communicate what data type is used in a variable in the code, for example
+age: int = 73
+#This means the age variable is meant to be an integer like the number 73
+#Modern IDEs like VS Code have atommated tools to check data types
+#Data type annotation is most useful when doing object-oriented programming or writing functions, otherwise it just adds to the burden of manually mapping data types every time a new data set is used
+
+#Defining functions that are not already included in Python
+#start by using the def keyword to denote the begining of defining a function, followed by the name of the custom function, then include the parameter(s) of the function within (), followed by a :
+#Begin the body of the function which defines what the function will do, this can be any other already defined function, calculation, etc. For example
+def greeting(name):
+    print("Hello, " + name)
+#now we can call the custom greeting function over and over as many times as needed within the program.
+
+#Defined functions can have multiple parameters, for example
+def greeting (name, department):
+    print("Welcome, " + name)
+    print("You are part of " + department)
+
+
