@@ -26,6 +26,11 @@ area = (base*height)/2 #triangle
 print("The area of the triangle is: " + str(area))
 #Within the print function, we told Python to explicitly change the data type of the variable area to a string
 
+#The print function can pass multiple arguments separated by commas, for example,
+month = January
+print("Investigate failed login attempts during", month, "if more than", 100)
+#Note that we did not have to put a space after the word during or than, because of the commas, Python will place a space there automatically
+
 #Data types can be determined using the type function within the print function, for example
 print(type("8"))
 #This returns a <class 'str'>, which means string because we used "" around the number
@@ -48,4 +53,16 @@ def greeting(name):
 def greeting (name, department):
     print("Welcome, " + name)
     print("You are part of " + department)
+
+#Pre-defined functions
+#We have already discussed print(), type(), str(), but here are a few more
+#sorted() will sort an iterable list of parameters from smallest to largest, of different data types, for example,
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(sorted(time_list))
+#Note, sorted() does not change the list under the variable, just sorts the one time, in this example, for the print() function
+
+#max() and min() functions return the max or min in a list, for example,
+time_list = [12, 2, 32, 19, 57, 22, 14]
+print(min(time_list)) #returns 2
+print(max(time_list)) #returns 57
 
