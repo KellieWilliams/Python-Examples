@@ -87,4 +87,99 @@ hours, minutes, seconds = convert_seconds(5000)
 print(hours, minutes, seconds) #results in 1 23 20
 
 #Comparing values
-print(10>1) #Returns True
+print(10>1) #Returns True, Boolean style
+
+print("cat" == "dog") #== is asking if two things are equal to each other, this example returns False
+
+print(1 != 2) #!= is asking if two things are not equal to each other, this example returns True
+
+#Strings can be compared using > and <. The > denotes something coming later in the alphabet, for example, Yellow > Cyan would be True
+#Note that there are numeric values associated with letters (ASCII values) which is what Python is comparing. Because of this, uppercase letters come first, then lowercase
+
+#Logic can be inverted using the not operator, for example
+print(not 42 == "Answer") #This is true, even though an int and a str are being compared, because not is in front of the operation
+
+#Additionally there are logical operators that can be added to the parameters for comparision, namely and, or, and not
+print(5>1 and 5<10) #This returns true because both arguments are true
+print(5>1 and 5=1)  #This returns false because one or more of the arguments is false
+print(5>1 or 5=1) #This returns true because at least one of the arguments is true
+print(5<1 or 5=1) #This returns false because all arguments are false
+
+#Branching
+#We can ask Python to make decisions based on criteria using the if function, for example
+def hint_username(username):
+    if len(username) < 3:
+        print("Invalid username. Must be at least 3 characters long.")
+#This checks to see if a user has inputted a username with a certain number of characters, if more than 3 no error message (Python skips the code), if less than 3, the error message is displayed
+
+#If we want Python to perform a task when the if statement is not met (instead of skipping like above), then we use the else statement, for example
+def hint_username(username):
+    if len(username) < 3:
+        print("Invalid username. Must be at least 3 chraacters long.")
+    else:
+        print("Valid username.")
+
+#The modulo operator, %, returns the remainder of a number after division
+#For example, we want to know if a number is even or not, if even, when divided by 2, the remainder will be 0
+def is_even(number):
+    if number % 2 == 0:
+        return True
+    return False #You can write the else statement here, but it's not needed because return is the end of the function as far as Python is concerned, so if return True didn't happen, then return False will happen and the function ends.
+
+#elif statements (else/if)
+#Sometimes we want Python to make more than one decision in an if statement, we use elif to stage those steps, for example
+def hint_username(username):
+    if len(username) < 3:
+        print("Invalid username. Must be at least 3 characters long.")
+    elif len(username) > 15:
+        print("Invlaid username. Must be at most 15 characters long.")
+    else:
+        print("Valid username")
+
+#Loops
+#While Loops - continuously execute code based on value of a condition, for example
+x = 0
+while x < 5:
+    print("Not there yet, x=" + str(x))
+    x = x + 1
+print("x=" x str(x))
+#This function will continue to loop until x = 5.
+
+def attempts(n):
+    x =1 
+    while x <= n: #greater than OR equal to, so when x = 5, it continues, because it's equal to
+        print("Attempt" +str(x))
+        x += 1 #Shorthand for x = x + 1
+    print("Done")
+attempts (5)
+#This function compares the variables x and n. In the first loop x=1 and n=5, so we will get a Attempt 1 print followed by an itteration of x+1 to now equal 2 and so on until x=6 then prints Done
+#Important to note, conditions for while loops need to end in true or false for them to perform
+
+#variables that are defined before new functions retain that variable, so be sure to redefine if resuing the same variable as needed, for example
+x = 1
+sum = 0
+while x < 10:
+    sum += x
+    x += 1
+
+product = 1
+while x < 10L
+    product = product * x
+    x += 1
+#Here we forget to redefine x back to 1, so when the second loop runs, x is still 10 from the previous loop
+
+#Because loops use conditions to tell them when to stop, it's possible to create infinite loops if conditions are never met. For example,
+while x % 2 == 0:
+    x = x / 2
+#This is checking if a number is even, but if x = 0, the remainder would be 0, and then being divided by 2 remains 0 and then the loop never ends.
+#To fix this, we need to add a condition where x cannot be 0, for example
+if x != 0:
+    while x % 2 == 0:
+        x = x/2
+#This checks if x = 0 first before entering the loop avoiding the infinite loop.
+#It can also be written in this format,
+while x != 0 and x % 2 == 0:
+    x = x / 2
+
+#The break keyword can be used in order to stop infinite loops
+
