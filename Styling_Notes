@@ -1,0 +1,18 @@
+#There are no hard and fast rules on how code should be writte, but each language has conventions, mostly based upon making it easier to read for those who didn't write the original code
+#An example of poor coding is as follows:
+def calculate(d):
+    q = 3.14
+    z = q * (d ** 2)
+    print(z)
+#The variables are not defined, so the reader would have to use logic or research what the original writer was intending to calculate here.
+
+#Here is where we would refactor the code to be more self explainitory, for example,
+def circle_area(radius):
+    pi = 3.14
+    area = pi * (radius ** 2)
+    print(area)
+
+#If the code isn't self-explainatory because of the complexity of the calculation, use commenting to explain what's going on
+
+#Another good practice is to keep code as clean as possible
+#One method is to reduce duplicate code by creating a function that is reused
