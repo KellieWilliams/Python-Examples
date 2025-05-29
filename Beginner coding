@@ -137,7 +137,7 @@ def hint_username(username):
         print("Valid username")
 
 #Loops
-#While Loops - continuously execute code based on value of a condition, for example
+#While Loops - continuously execute code based on value of a condition, for example - use when you want to repeat an action until a condition changes
 x = 0
 while x < 5:
     print("Not there yet, x=" + str(x))
@@ -183,3 +183,72 @@ while x != 0 and x % 2 == 0:
 
 #The break keyword can be used in order to stop infinite loops
 
+#For loop - iterates over a sequence of values - use when there's a sequence of elements you want to iterate
+for x in range(5): #range starts with 0 by default and the list of numbers generated will end one less than the given value
+    print(x)
+#This returns 0, 1, 2, 3, and 4. There are 5 values, but ends at 4 because it starts at 0
+
+#the for loop can iterate over strings as well, this is where it differs from the while loop, for example
+friends = ['Taylor', 'Alex', 'Pat', 'Eli']
+for friend in friends:
+    print("Hi" + friend)
+#This returns a list of messages saying Hi + the name of each friend listed in the friends list
+
+#If you want range() to start at another number besides the 0 default, enter two parameters separated by commas, the first is the start number, the sencond is the end iteration
+range(1,10) #starts at 1, ends at 9
+
+#If we want a larger step between iterations besides 1, add a third parameter, again separated by commas
+def to_celsius(x):
+    return (x-32)*5/9
+for x in range(0,101,10) #This starts at 0, goes to 100, in steps of 10
+    print(x, to_celsius(x))
+#This returns a list of 10 °F degrees, starting at 0, ending at 100 with the conversion to °C just to the right
+
+#range() can also iterate backwards by denoting a negative number as the last parameter, for example
+for x in range(2, -3, -1)
+    print(x)
+#This results in a list of 2, 1, 0, -1, -2
+
+values = [ 23, 52, 59, 37, 48 ]
+sum = 0
+length = 0
+for value in values:
+    sum += value #Increases the sum variable each iteration by the next value in the list until whole list is done
+    length += 1 #Calculates how many values are in the list
+print("Total sum: " + str(sum) + " - Average: " + str(sum/length))
+
+#Nested for loops
+#If we wanted to list all of the dominos in a set, we would use the following example
+for left in range(7):
+    for right in range(left, 7):
+        printi("[" + str(left) + "|" +str(right) + "]", end=" ") #end is a new parameter which tells print how to end a line, in this case a space, if not included print defaults to newline
+    print()
+#This results in
+#[0|0] [0|1] [0|2] etc
+#[1|1] [1|2] etc
+#[1|0] is skipped because it's the same as [0|1] in the game
+#The first iteration, left = 0, gets entered into the next for loop at range(0,7) which results in the first iteration of the second loop for right = 0, so [0|0]
+#The second iteration, we're still in left = 0, then right = 1, so [0|1] and so on until right = 6
+#The eighth iteration, we return to left now = 1, and right in range(1,7) so right = 1
+#The ninth iteration, left still = 1, and right = 2 and so on until the first for loop is exausted at [6|6]
+
+#We want all combos of 4 basketball teams to be listed, and teams cannot play against itself, so make a condition where the pairings are different
+teams = [ 'Dragons', 'Wolves', 'Pandas', 'Unicorns'] #Either single or double quotes can be used to denote strings, but do not mix them, causes an error
+for home_team in teams:
+    for away_team in teams:
+        if home_team != away_team:
+            print(home_team + " vs " + away_team)
+
+#Important to note that loops take computer processing time to complete. The more elements in a list, the longer the computing time. Nesting the loops increasees this time exponentially.
+
+#Strings can be used as a list, for example
+greeting = "Hello"
+for c in greeting:
+    print("The next characters is:" , c)
+#This results in H e l l o in vertical.
+
+#You can also get the position of a character within a string
+greeting = "Hello"
+for i in range(len(greeting)):
+    print(i)
+#This results in 0 1 2 3 4 in vertical
